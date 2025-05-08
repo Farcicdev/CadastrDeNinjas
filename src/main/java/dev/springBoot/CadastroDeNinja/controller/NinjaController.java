@@ -1,4 +1,4 @@
-package dev.springBoot.CadastroDeNinja.Model;
+package dev.springBoot.CadastroDeNinja.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping
-public class Controller {
+public class NinjaController {
 
     @GetMapping("/teste")//tenque ser minusculo
     public String boasVindas(){
