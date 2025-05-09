@@ -14,10 +14,17 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     private String email;
+
     private int idade;
-    private List<NinjaMissoes> missoes;
+
+    //@manyToOne varios ninjas terao uma missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")//Foreing key ou chave estrangeira
+    private NinjaMissoes missoesNinja;
 
 
     public NinjaModel() {
@@ -28,6 +35,8 @@ public class NinjaModel {
         this.idade = idade;
         this.email = email;
     }
+
+
 
     public Long getId() {
         return id;
