@@ -1,0 +1,23 @@
+[33mcommit 0e910ac13efd39d48993bcedb717304935e20cbf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Farcicdev <augustoastolphi@gmail.com>
+Date:   Thu May 8 20:07:09 2025 -0300
+
+    getter and setter faltantes.
+
+[33mcommit 5d8e542aad8eb147bec882cb8600419c719170ae[m
+Author: Farcicdev <augustoastolphi@gmail.com>
+Date:   Thu May 8 20:00:39 2025 -0300
+
+    Criada a classe  Model
+
+[33mcommit 4058352b358f1486f1e73430187c43a94e4c326d[m
+Author: Farcicdev <augustoastolphi@gmail.com>
+Date:   Thu May 8 19:11:39 2025 -0300
+
+    Criado a Controller
+
+[33mcommit 818d863efc30c0c5a997aea0da7b1088841bf63c[m
+Author: Farcicdev <augustoastolphi@gmail.com>
+Date:   Thu May 8 18:26:26 2025 -0300
+
+    first commit

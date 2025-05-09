@@ -1,6 +1,9 @@
-package dev.springBoot.CadastroDeNinja.model;
+package dev.springBoot.CadastroDeNinja.Ninjas;
 
+import dev.springBoot.CadastroDeNinja.Missoes.NinjaMissoes;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 //tranforma a classe em banco de dados
 //JPA java percistence API
@@ -14,6 +17,8 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    private List<NinjaMissoes> missoes;
+
 
     public NinjaModel() {
     }
