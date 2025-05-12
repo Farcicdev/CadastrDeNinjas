@@ -1,12 +1,10 @@
 package dev.springBoot.CadastroDeNinja.Ninjas;
 
-import dev.springBoot.CadastroDeNinja.Missoes.NinjaMissoes;
+import dev.springBoot.CadastroDeNinja.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 //tranforma a classe em banco de dados
 //JPA java percistence API
@@ -30,6 +28,6 @@ public class NinjaModel {
     //@manyToOne varios ninjas terao uma missao
     @ManyToOne
     @JoinColumn(name = "missoes_id")//Foreing key ou chave estrangeira
-    private NinjaMissoes missoesNinja;
+    private MissoesModel missoesNinja;
 
 }
