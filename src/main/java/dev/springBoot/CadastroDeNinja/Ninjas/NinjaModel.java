@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 //tranforma a classe em banco de dados
 //JPA java percistence API
 @Entity
-@Table(name = "tb_cadastro")
+@Table (name = "tb_cadastro")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -20,9 +20,10 @@ public class NinjaModel {
     private Long id;
 
     private String nome;
+
     @Column(unique = true)//coluna unica
     private String email;
-
+    @Column(name = "idade")
     private int idade;
 
     //@manyToOne varios ninjas terao uma missao
