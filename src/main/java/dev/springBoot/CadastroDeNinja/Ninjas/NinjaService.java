@@ -21,7 +21,7 @@ public class NinjaService {
     }
 
     public NinjaModel listNinjaId(Long id){
-        Optional<NinjaModel> ninjaModel = ninjaRepository.findById(id);
+        Optional<NinjaModel> ninjaModel = ninjaRepository.findById(id);//optopnal usa caso a informacao existir ou nao, no caso o ninja pode ou nao existir no casdastro
         return ninjaModel.orElse(null);
     }
 
@@ -30,6 +30,19 @@ public class NinjaService {
         return ninjaRepository.save(ninja);
 
     }
+    //deletar ninja tem que ser um metado void
+    public void deletarNinjaId(Long id){
+        ninjaRepository.deleteById(id);
+    }
 
 
+    //alterar Ninja
+    public  NinjaModel alterarNinja(Long id, NinjaModel ninjaatualizado){
+        if (ninjaRepository.existsById(id)){
+            ninjaatualizado.setId(id);
+            return ninjaRepository.save(ninjaatualizado);
+        }else {
+            return null;
+        }
+    }
 }

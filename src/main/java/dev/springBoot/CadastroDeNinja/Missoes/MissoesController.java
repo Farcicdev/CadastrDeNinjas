@@ -27,18 +27,13 @@ public class MissoesController {
         return listmissoes.mostrarMissoes();        
     }
 
-    @GetMapping("/missoes/{id}")
-    public MissoesModel listId(@PathVariable Long id){
-        return listmissoes.listMissoesId(id);
+    @PutMapping("/alterar/{id}")//@Patchvariable quando precisar do id no url colocar essa annotation
+    public MissoesModel alterarNinjas(@PathVariable Long id,@RequestBody MissoesModel missoesAtualizada){
+        return listmissoes.alterarMissao(id,missoesAtualizada);
     }
 
-    @PutMapping("/alterar")
-    public String alterarMissao(){
-        return "alterada a missao";
-    }
-
-    @DeleteMapping("/deleta")
-    public String deletaMissao(){
-        return "deletada a missao";
+    @DeleteMapping("/deleta/{id}")
+    public void deletaMissao(@PathVariable Long id){
+        listmissoes.deleteMissoesId(id);
     }
 }

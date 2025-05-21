@@ -21,12 +21,21 @@ public class MissoesService {
         return modelMissoes.findAll();
     }
 
-    public MissoesModel listMissoesId(Long id){
-        Optional<MissoesModel> missoesModel = modelMissoes.findById(id);
-        return missoesModel.orElse(null);
-    }
-
     public MissoesModel newMissao(MissoesModel missao){
         return modelMissoes.save(missao);
     }
+
+    public void deleteMissoesId(Long id){
+        modelMissoes.deleteById(id);
+    }
+
+    public MissoesModel alterarMissao(Long id, MissoesModel missoesModel){
+        if(modelMissoes.existsById(id)){
+            missoesModel.setId(id);
+            return modelMissoes.save(missoesModel);
+        }else{
+            return null;
+        }
+    }
+
 }
