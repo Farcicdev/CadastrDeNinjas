@@ -10,9 +10,15 @@ import java.util.Optional;
 public class NinjaService {
 
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaDTO;
 
     public NinjaService(NinjaRepository ninjaRepository) {
         this.ninjaRepository = ninjaRepository;
+    }
+
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaDTO) {
+        this.ninjaRepository = ninjaRepository;
+        this.ninjaDTO = ninjaDTO;
     }
 
     //Listar todos os ninjas
@@ -25,9 +31,10 @@ public class NinjaService {
         return ninjaModel.orElse(null);
     }
 
-    public NinjaModel newNinja (NinjaModel ninja){
-
-        return ninjaRepository.save(ninja);
+    public NinjaDTO newNinja(NinjaDTO ninjaDto){
+        NinjaModel ninja = ninjaDTO.map(ninjaDto);
+        ninja = ninjaRepository.save(ninja);
+        return ninjaDTO.map(ninja);
 
     }
     //deletar ninja tem que ser um metado void
