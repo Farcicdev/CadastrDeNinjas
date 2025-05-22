@@ -12,6 +12,9 @@ public class NinjaService {
     private NinjaRepository ninjaRepository;
     private NinjaMapper ninjaDTO;
 
+    public NinjaService() {
+    }
+
     public NinjaService(NinjaRepository ninjaRepository) {
         this.ninjaRepository = ninjaRepository;
     }
