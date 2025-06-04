@@ -18,17 +18,17 @@ public class MissoesController {
 
     //Post -- Mandar uma requisisao para o usuario criar algo mandar a informacao
     @PostMapping("/criar")
-    public MissoesModel criar(@RequestBody MissoesModel missoesModel ){
+    public MissoesDTO criar(@RequestBody MissoesDTO missoesModel)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {
         return listmissoes.newMissao(missoesModel);
     }
     //GET -- Mandar uma requisisao para mostrar algo para o usuario
     @GetMapping("/missoes")
-    public List<MissoesModel> mostrarMissoes(){
+    public List<MissoesDTO> mostrarMissoes(){
         return listmissoes.mostrarMissoes();        
     }
 
     @PutMapping("/alterar/{id}")//@Patchvariable quando precisar do id no url colocar essa annotation
-    public MissoesModel alterarNinjas(@PathVariable Long id,@RequestBody MissoesModel missoesAtualizada){
+    public MissoesDTO alterarNinjas(@PathVariable Long id,@RequestBody MissoesDTO missoesAtualizada){
         return listmissoes.alterarMissao(id,missoesAtualizada);
     }
 
