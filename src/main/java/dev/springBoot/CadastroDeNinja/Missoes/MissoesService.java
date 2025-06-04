@@ -41,6 +41,12 @@ public class MissoesService {
         modelMissoes.deleteById(id);
     }
 
+    public MissoesDTO mostrarmissoesId(Long id){
+       Optional<MissoesModel> missoes = modelMissoes.findById(id);
+       return missoes.map(mapperMissoes::map).orElse(null);
+
+    }
+
     public MissoesDTO alterarMissao(Long id, MissoesDTO missoesDTO) {
 
        Optional<MissoesModel> missoesExistente = modelMissoes.findById(id);
